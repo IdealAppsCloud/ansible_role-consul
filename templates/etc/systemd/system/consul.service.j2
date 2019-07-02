@@ -1,0 +1,16 @@
+[Unit]
+Description=consul service
+After=network-online.target
+
+[Service]
+Type=notify
+
+ExecStart=/usr/local/bin/consul agent -config-dir "{{ consul_config_dir }}"
+ExecStop=/usr/local/bin/consul leave
+
+TimeoutStopSec=60
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

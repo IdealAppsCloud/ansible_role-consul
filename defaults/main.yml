@@ -1,0 +1,5 @@
+---
+consul_version: 1.5.3
+consul_config_dir: /etc/consul.d
+consul_config:
+  data_dir: /opt/consul
